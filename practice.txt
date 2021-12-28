@@ -1,0 +1,479 @@
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ pwd
+/e/GIT_practice
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ ls
+FileA.txt.txt  FileB.txt.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ cat filea.txt
+cat: filea.txt: No such file or directory
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ cat filea.txt.txt
+THIS IS FILE A
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ touch fileA.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ touch fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ ls
+fileA.txt  fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ cat fileA.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ cat fileA.txt
+THIS IS FILE A
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ cat fileB.txt
+THIS IS FILE B
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ git commit -m"first commit"
+fatal: not a git repository (or any of the parent directories): .git
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice
+$ GIT init
+Initialized empty Git repository in E:/GIT_practice/
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git commit -m "first commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will b
+        fileA.txt
+        fileB.txt
+
+nothing added to commit but untracked files present
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git add .
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git commit -m "first commit"
+[master (root-commit) 8dfb92b] first commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA.txt
+ create mode 100644 fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git commit - amend
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'amend' did not match any file(s) known to git
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git commit -amend
+error: did you mean `--amend` (with two dashes)?
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git commit --amend
+[master 308393a] first commit
+ Date: Tue Dec 28 17:35:59 2021 +0530
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA.txt
+ create mode 100644 fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git commit --amend -m "first commit modified"
+[master c2af2d0] first commit modified
+ Date: Tue Dec 28 17:35:59 2021 +0530
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA.txt
+ create mode 100644 fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git diff > fileA.txt.patch
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git apply fileA.txt.patch
+error: unrecognized input
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ ls
+fileA.txt  fileA.txt.patch  fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ cat fileA.txt.patch
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ git cherry-pick <commit-hash>
+bash: syntax error near unexpected token `newline'
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master
+$ touch quotation.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ ls
+fileA.txt        fileB.txt
+fileA.txt.patch  quotation.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ ls -a
+./   .git/      fileA.txt.patch  quotation.txt
+../  fileA.txt  fileB.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ vi quotation.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ vi fileA.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ cat fileA.txt
+THIS IS FILE A
+hello
+test
+demo
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git branch
+* master
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git branch branchone
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git branch
+  branchone
+* master
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git checkout branchone
+Switched to branch 'branchone'
+M       fileA.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git branch
+* branchone
+  master
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ touch index.html
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ vi index.html
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ cat index.html
+<h1>this is the html file created using vi editor</h1>
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ vi quotation.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ cat quotation.txt
+this is the content
+
+modified content added here!
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   fileA.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fileA.txt.patch
+        index.html
+        quotation.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git add .
+warning: LF will be replaced by CRLF in fileA.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in quotation.txt.
+The file will have its original line endings in your working directory
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   fileA.txt
+        new file:   fileA.txt.patch
+        new file:   index.html
+        new file:   quotation.txt
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git commit -m "added index.html and modified quotation.txt"
+[branchone 44579f2] added index.html and modified quotation.txt
+ 4 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 fileA.txt.patch
+ create mode 100644 index.html
+ create mode 100644 quotation.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git log
+commit 44579f265eebcc61847e54bb91a57ec54fe15eb6 (HEAD -> branchone)
+Author: Aniruddha <kaingadeaniruddha21@gmail.com>
+Date:   Tue Dec 28 19:01:00 2021 +0530
+
+    added index.html and modified quotation.txt
+
+commit c2af2d04f3a4716f04874e883253945536907368 (master)
+Author: Aniruddha <kaingadeaniruddha21@gmail.com>
+Date:   Tue Dec 28 17:35:59 2021 +0530
+
+    first commit modified
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git branch
+* branchone
+  master
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git checkout master
+Switched to branch 'master'
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git branch
+  branchone
+* master
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git checkout -b branchtwo
+Switched to a new branch 'branchtwo'
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git branch
+  branchone
+* branchtwo
+  master
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git status
+On branch branchtwo
+nothing to commit, working tree clean
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ touch home.html
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git status
+On branch branchtwo
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git add .
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git commit -m "home.html added"
+[branchtwo 7777d8f] home.html added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 home.html
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git status
+On branch branchtwo
+nothing to commit, working tree clean
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git log --oneline
+7777d8f (HEAD -> branchtwo) home.html added
+c2af2d0 (master) first commit modified
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchtwo)
+$ git checkout master
+Switched to branch 'master'
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git merge branchone
+Updating c2af2d0..44579f2
+Fast-forward
+ fileA.txt       | 5 ++++-
+ fileA.txt.patch | 0
+ index.html      | 2 ++
+ quotation.txt   | 4 ++++
+ 4 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 fileA.txt.patch
+ create mode 100644 index.html
+ create mode 100644 quotation.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git log --oneline
+44579f2 (HEAD -> master, branchone) added index.html and modified quotation.txt
+c2af2d0 first commit modified
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git merge branchtwo
+Merge made by the 'recursive' strategy.
+ home.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 home.html
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git log --oneline
+32c3cde (HEAD -> master) Merge branch 'branchtwo'
+7777d8f (branchtwo) home.html added
+44579f2 (branchone) added index.html and modified quotation.txt
+c2af2d0 first commit modified
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git cherry
+Could not find a tracked remote branch, please specify <upstream> manually.
+usage: git cherry [-v] [<upstream> [<head> [<limit>]]]
+
+    --abbrev[=<n>]        use <n> digits to display object names
+    -v, --verbose         be verbose
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git cherry-pick
+usage: git cherry-pick [<options>] <commit-ish>...
+   or: git cherry-pick <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    -x                    append commit name
+    --ff                  allow fast-forward
+    --allow-empty         preserve initially empty commits
+    --allow-empty-message
+                          allow commits with empty messages
+    --keep-redundant-commits
+                          keep redundant, empty commits
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git cherry-pick 32c3cde
+error: commit 32c3cde26d5417fd958eb5622274266ff56d1382 is a merge but no -m option was given.
+fatal: cherry-pick failed
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ touch test1.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git add .
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test1.txt
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git commit -m "added test1.txt file"
+[master 63b4f0a] added test1.txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (master)
+$ git checkout branchone
+Switched to branch 'branchone'
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ touch test21.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test21.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git add .
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test21.txt
+
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git commit -m "added test21.text file"
+[branchone 7c69bfe] added test21.text file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test21.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+nothing to commit, working tree clean
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ touch test22.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test22.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git add .
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git commit -m "added test22.txt file"
+[branchone 478d496] added test22.txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test22.txt
+
+Anirudha@Anirudha-PC MINGW64 /e/GIT_practice (branchone)
+$ git status
+On branch branchone
+nothing to commit, working tree clean
